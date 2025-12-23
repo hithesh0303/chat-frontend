@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Real-Time Chat App</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <title>Real Time Chat Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="chat-container">
-    <h2>Real-Time Chat</h2>
+  <div class="app-container">
+    <h1>REAL TIME CHAT<br>APPLICATION</h1>
 
-    <ul id="chat"></ul>
+    <div id="chat-box">
+      <ul id="chat"></ul>
+    </div>
 
-    <div class="input-box">
-      <input id="msg" placeholder="Type your message..." />
-      <button onclick="sendMsg()">Send</button>
+    <div class="input-section">
+      <input
+        id="msg"
+        type="text"
+        placeholder="Text here..."
+      />
+      <button onclick="sendMsg()">SEND</button>
     </div>
   </div>
 
