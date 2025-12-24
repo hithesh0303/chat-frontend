@@ -5,28 +5,39 @@
 
 body {
   margin: 0;
-  padding: 0;
   background: #ffffff;
   display: flex;
   justify-content: center;
 }
 
-.app-container {
-  width: 100%;
+/* Screen handling */
+.screen {
+  display: none;
   max-width: 420px;
+  width: 100%;
   padding: 20px;
   text-align: center;
 }
 
+.screen.active {
+  display: block;
+}
+
+/* Headings */
 h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
+h2 {
+  color: #d32f2f;
+}
+
+/* Chat box */
 #chat-box {
   background: #e0e0e0;
-  height: 360px;
+  height: 320px;
   border-radius: 6px;
   padding: 10px;
   overflow-y: auto;
@@ -41,13 +52,14 @@ h1 {
 
 #chat li {
   background: #ffffff;
-  margin-bottom: 8px;
   padding: 6px 10px;
+  margin-bottom: 6px;
   border-radius: 4px;
   text-align: left;
   font-size: 14px;
 }
 
+/* Input area */
 .input-section {
   display: flex;
   gap: 10px;
@@ -61,6 +73,7 @@ input {
   border: 1px solid #ccc;
 }
 
+/* Buttons */
 button {
   padding: 10px 18px;
   border-radius: 20px;
@@ -68,4 +81,8 @@ button {
   background: #f0f0f0;
   font-weight: bold;
   cursor: pointer;
+}
+
+.exit-btn {
+  margin-top: 10px;
 }
