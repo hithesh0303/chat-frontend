@@ -1,21 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real Time Chat Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
   <!-- Screen 1: Welcome -->
   <div id="screen-welcome" class="screen active">
-    <h1>REAL TIME CHAT APPLICATION</h1>
+    <h1>REAL TIME CHAT<br>APPLICATION</h1>
     <button onclick="goToName()">Start Chat</button>
   </div>
 
   <!-- Screen 2: Name Entry -->
   <div id="screen-name" class="screen">
-    <h1>REAL TIME CHAT APPLICATION</h1>
+    <h1>REAL TIME CHAT<br>APPLICATION</h1>
     <input id="username" placeholder="Enter name">
     <button onclick="goToChat()">Join Chat</button>
   </div>
 
   <!-- Screen 3: Chat -->
   <div id="screen-chat" class="screen">
-    <h1>REAL TIME CHAT APPLICATION</h1>
+    <h1>REAL TIME CHAT<br>APPLICATION</h1>
 
     <div id="chat-box">
       <ul id="chat"></ul>
@@ -26,12 +35,12 @@
       <button onclick="sendMsg()">SEND</button>
     </div>
 
-    <button onclick="goToEnd()">Exit</button>
+    <button class="exit-btn" onclick="goToEnd()">Exit</button>
   </div>
 
   <!-- Screen 4: Thank You -->
   <div id="screen-end" class="screen">
-    <h1>REAL TIME CHAT APPLICATION</h1>
+    <h1>REAL TIME CHAT<br>APPLICATION</h1>
     <h2>Thank you 🙏</h2>
     <button onclick="goToChat()">Rejoin Chat</button>
   </div>
@@ -40,3 +49,4 @@
   <script src="script.js"></script>
 
 </body>
+</html>
