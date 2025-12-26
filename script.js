@@ -2,11 +2,12 @@ const socket = io("https://subtriangulate-unstrained-risa.ngrok-free.dev", {
   transports: ["websocket"]
 });
 
-/* ---------- Screen Navigation ---------- */
+let username = "";
 
+/* Screen Navigation */
 function showScreen(id) {
   document.querySelectorAll(".screen")
-    .forEach(screen => screen.classList.remove("active"));
+    .forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
 
@@ -15,6 +16,7 @@ function goToName() {
 }
 
 function goToChat() {
+  username = document.getElementById("username").value || "Guest";
   showScreen("screen-chat");
 }
 
@@ -22,20 +24,32 @@ function goToEnd() {
   showScreen("screen-end");
 }
 
-/* ---------- Chat Logic ---------- */
-
+/* Chat Logic */
 function sendMsg() {
   const input = document.getElementById("msg");
   const msg = input.value.trim();
 
   if (msg !== "") {
-    socket.emit("message", msg);
+    socket.emit("message", {
+      username: username,
+      message: msg
+    });
     input.value = "";
   }
 }
 
-socket.on("message", (msg) => {
+/* Load Old Messages */
+socket.on("oldMessages", (messages) => {
+  messages.forEach(data => {
+    const li = document.createElement("li");
+    li.innerText = `${data.username}: ${data.message}`;
+    document.getElementById("chat").appendChild(li);
+  });
+});
+
+/* Receive New Message */
+socket.on("message", (data) => {
   const li = document.createElement("li");
-  li.innerText = msg;
+  li.innerText = `${data.username}: ${data.message}`;
   document.getElementById("chat").appendChild(li);
 });
